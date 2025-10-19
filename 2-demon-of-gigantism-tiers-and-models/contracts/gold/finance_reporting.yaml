@@ -1,0 +1,45 @@
+# TIER: GOLD
+# DESCRIPTION: Mission-critical data for official financial reporting.
+# Highest level of assurance, support, and governance.
+
+owner:
+  team: "finance-data-platform"
+  support_channel: "#finance-data-support"
+
+sla:
+  - type: "freshness"
+    max_latency_hours: 1
+  - type: "incident_response"
+    p1_resolution_hours: 2
+    p2_resolution_hours: 8
+
+schema_evolution:
+  backward_compatible: true # Can add fields, but not remove/rename them
+
+fields:
+  transaction_id:
+    type: string
+    required: true
+    description: "Unique identifier for the financial transaction."
+  order_id:
+    type: string
+    required: true
+    description: "The order associated with this transaction."
+  gmv:
+    type: number
+    required: true
+    description: "Gross Merchandise Value. Calculated as (price * quantity) - refunds - taxes."
+    tags:
+      unit: "full_unit"
+      currency: "EUR"
+  order_placed_at:
+    type: string # ISO 8601 format
+    required: true
+    description: "Timestamp when the order was placed."
+
+quality_rules:
+  - name: "gmv_must_be_positive_or_zero"
+    expression: "gmv >= 0"
+  - name: "transaction_id_is_unique"
+    # In a real system, this would be checked by a tool like Soda or dbt tests
+    is_unique: true
