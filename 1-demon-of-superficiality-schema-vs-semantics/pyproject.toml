@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "1-demon-of-superficiality-schema-vs-semantics"
+version = "0.1.0"
+description = "Demo for the Demon of Superficiality."
+authors = ["Eugene Klyuchnikov <eugene.klyuchnikov@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "~3.11"  # Specifies Python 3.11.x is required
+
+# Core dependencies for all plays
+pydantic = "^2.12.3"
+pyyaml = "^6.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

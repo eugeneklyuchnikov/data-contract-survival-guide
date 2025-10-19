@@ -1,0 +1,8 @@
+# contract_v1_schema_only.yaml
+# A basic contract that only validates the shape and types of the data.
+# It's blind to semantic or business logic errors.
+fields:
+  order_id: { type: string, required: true }
+  product_id: { type: string, required: true }
+  total_price: { type: number, required: true }
+  customer_email: { type: string, required: false }

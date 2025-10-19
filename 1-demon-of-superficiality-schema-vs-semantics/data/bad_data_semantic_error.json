@@ -1,0 +1,12 @@
+[
+  {
+    "order_id": "ord-456",
+    "product_id": "prod-def",
+    "total_price": 1999
+  },
+  {
+    "order_id": "ord-789",
+    "product_id": "prod-ghi",
+    "total_price": -5.00
+  }
+]

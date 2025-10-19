@@ -1,0 +1,26 @@
+# contract_v2_semantic.yaml
+# A semantic contract that understands business rules and data meaning.
+fields:
+  order_id:
+    type: string
+    required: true
+    description: "Unique identifier for the order."
+  product_id:
+    type: string
+    required: true
+    description: "Identifier for the product."
+  total_price:
+    type: number
+    required: true
+    description: "Final price paid by customer."
+    tags:
+      unit: "full_unit" # Can be 'full_unit' or 'cents'
+  customer_email:
+    type: string
+    required: false
+    description: "Customer's email address."
+    tags:
+      is_pii: true
+quality_rules:
+  - name: "price_must_be_positive"
+    expression: "total_price >= 0"

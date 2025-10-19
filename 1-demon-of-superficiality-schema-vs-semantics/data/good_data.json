@@ -1,0 +1,6 @@
+{
+  "order_id": "ord-123",
+  "product_id": "prod-abc",
+  "total_price": 19.99,
+  "customer_email": "test@example.com"
+}
