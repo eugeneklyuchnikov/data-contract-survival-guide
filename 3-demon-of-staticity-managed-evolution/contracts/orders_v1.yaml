@@ -1,0 +1,5 @@
+# The stable, version 1 of our orders contract
+fields:
+  order_id: { type: string, required: true }
+  customer_id: { type: string, required: true }
+  total_price: { type: number, required: true }

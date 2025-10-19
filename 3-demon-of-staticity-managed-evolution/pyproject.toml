@@ -9,10 +9,6 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "~3.11"  # Specifies Python 3.11.x is required
 
-# Core dependencies
-pyyaml = "^6.0.3"
-rich = "^14.2.0"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

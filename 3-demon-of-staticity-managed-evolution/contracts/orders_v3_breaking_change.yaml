@@ -1,0 +1,6 @@
+# Version 3: A breaking change!
+fields:
+  # RENAMED FIELD: 'order_id' is now 'id'. This will break existing consumers.
+  id: { type: string, required: true }
+  customer_id: { type: string, required: true }
+  total_price: { type: number, required: true }

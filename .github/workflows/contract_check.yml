@@ -1,0 +1,38 @@
+name: "Data Contract Evolution Check"
+
+# This action runs on pull requests that change files in this specific demo's contracts
+on:
+  pull_request:
+    paths:
+      - '3-demon-of-staticity-managed-evolution/contracts/**'
+
+jobs:
+  detect-breaking-change:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v3
+        with:
+          # Fetch the main branch to compare against
+          fetch-depth: 0
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: "Install dependencies"
+        run: pip install pyyaml
+
+      - name: "Get base contract from main branch"
+        # This clever step checks out the original version of the changed file from the main branch
+        run: |
+          git checkout main -- 3-demon-of-staticity-managed-evolution/contracts/orders_v1.yaml
+          mv 3-demon-of-staticity-managed-evolution/contracts/orders_v1.yaml /tmp/orders_v1_base.yaml
+          git checkout ${{ github.head_ref }} # Return to the PR's state
+
+      - name: "Run breaking change detection"
+        run: |
+          python 3-demon-of-staticity-managed-evolution/scripts/breaking_change_detector.py \
+            /tmp/orders_v1_base.yaml \
+            3-demon-of-staticity-managed-evolution/contracts/orders_v1.yaml
