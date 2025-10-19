@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "2-demon-of-gigantism-tiers-and-models"
+name = "4-demon-of-the-future-the-diplomat"
 version = "0.1.0"
-description = "Demo for the Demon of Gigantism."
+description = "Demo for the Demon of AI hype."
 authors = ["Eugene Klyuchnikov <eugene.klyuchnikov@gmail.com>"]
 readme = "README.md"
 package-mode = false
@@ -10,6 +10,8 @@ package-mode = false
 python = "~3.11"  # Specifies Python 3.11.x is required
 
 # Core dependencies
+google-generativeai = "^0.8.5"
+python-dotenv = "^1.1.1"
 pyyaml = "^6.0.3"
 rich = "^14.2.0"
 

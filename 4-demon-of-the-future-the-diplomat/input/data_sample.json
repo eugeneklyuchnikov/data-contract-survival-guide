@@ -1,0 +1,21 @@
+[
+  {
+    "user_id": "u-1a2b3c",
+    "event_timestamp": "2025-11-21T09:30:15Z",
+    "event_type": "badge_earned",
+    "metadata": {
+      "badge_name": "Early Adopter",
+      "level": 3,
+      "points_awarded": 100
+    }
+  },
+  {
+    "user_id": "u-4d5e6f",
+    "event_timestamp": "2025-11-21T09:32:48Z",
+    "event_type": "level_up",
+    "metadata": {
+      "previous_level": 4,
+      "new_level": 5
+    }
+  }
+]

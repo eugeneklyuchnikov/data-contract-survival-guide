@@ -1,0 +1,8 @@
+From: Alex (Data Analyst)
+To: Kev (Backend Engineer)
+
+Hey Kev, can you give me a data dump for the new "Gamification" feature events? I need to build a dashboard to track user engagement.
+
+Looks like we have the user ID, a timestamp, the type of event, and then some metadata blob for the specifics. This is super important for the product team.
+
+Let's make sure this data is reliable going forward.
